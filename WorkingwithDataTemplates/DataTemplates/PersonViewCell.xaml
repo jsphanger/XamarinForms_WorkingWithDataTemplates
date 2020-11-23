@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="WorkingwithDataTemplates.DataTemplates.PersonViewCell" >
+    <ViewCell.View>
+        <StackLayout>
+            <Grid>
+                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                <Label Grid.Column="1" Text="{Binding Age}" />
+                <Label Grid.Column="2" Text="{Binding Location}" HorizontalTextAlignment="End" />
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

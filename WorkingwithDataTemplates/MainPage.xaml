@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+             x:Class="WorkingwithDataTemplates.MainPage"
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout Margin="20">
+
+        <Label Text="Working with DataTemplates!" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" Margin="0,0,0,10" />
+
+        <Label Text="Instructions:" FontAttributes="Bold" FontSize="Subtitle" />
+        <Label Text="Use the buttons below to navigate to the diferent" />
+
+        <Button x:Name="btnInline" Text="Inline Code" HorizontalOptions="Center" Clicked="btnInline_Clicked"></Button>
+        <Button x:Name="btnModelType" Text="Modeling with Layouts" HorizontalOptions="Center" Clicked="btnModelType_Clicked"></Button>
+        <Button x:Name="btnBindableLayout" Text="Bindable Layouts" HorizontalOptions="Center" Clicked="btnBindableLayout_Clicked"></Button>
+
+    </StackLayout>
+
+</ContentPage>

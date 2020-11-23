@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:WorkingwithDataTemplates.Models"
+             xmlns:viewmodels="clr-namespace:WorkingwithDataTemplates.ViewModels"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="WorkingwithDataTemplates.Views.BindableLayoutTemplates"
+             ios:Page.UseSafeArea="True">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ModelTypeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!-- This uses a PersonView within a bindable layout -->
+            <Label Text="A bindable layout using a POCO object from a code behind file!" FontSize="Subtitle" Margin="10" />
+
+            <StackLayout BindableLayout.ItemsSource="{Binding PersonList}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <models:PersonView />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+            <!-- This is a complete bindable layout created in code behind -->
+            <Label Text="A custom control of a bindable layout using a POCO object" FontSize="Subtitle" Margin="10" />
+
+            <models:PersonBindableLayout BindableLayout.ItemsSource="{Binding PersonList}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

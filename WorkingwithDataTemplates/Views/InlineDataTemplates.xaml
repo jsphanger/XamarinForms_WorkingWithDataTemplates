@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:viewmodels="clr-namespace:WorkingwithDataTemplates.ViewModels"
+             x:Class="WorkingwithDataTemplates.Views.InlineDataTemplates"
+             ios:Page.UseSafeArea="True">
+
+    <ContentPage.BindingContext>
+        <viewmodels:ModelTypeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Inline code showing how to utilize a DataTemplate" FontSize="Subtitle" Margin="10" />
+
+            <ListView Margin="20" ItemsSource="{Binding PersonList}">
+                <ListView.ItemTemplate>
+
+                    <!-- Inline DataTemplate uses a Cell (in this case ViewCell) to define the layout! -->
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                <Label Grid.Column="1" Text="{Binding Age}" />
+                                <Label Grid.Column="2" Text="{Binding Location}" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
